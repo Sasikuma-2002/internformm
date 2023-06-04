@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Form validation
+    </title>
+    <style>
+        h1{
+            color:blue;
+        }
+    </style>
+    <script>
+    function formValidation()
+{
+var frm=document.getElementById("registrationform");
+var fname = document.getElementById("fname").value;
+var lname = document.getElementById("lname").value;
+var uemail = document.getElementById("mail").value;
+var passid1 = document.getElementById("pw").value;
+var passid2 = document.getElementById("rpw").value;
+var age=document.getElementById("age").value;
+var phnumber=document.getElementById("phnumber").value;
+var uadd = document.getElementById("address").value;
+var ustate = document.getElementById("state");
+if(fname=="") {  
+      document.getElementById("blankMsg").innerHTML="POOR";  
+      return false;  
+    }
+if(lname=="") {  
+      document.getElementById("emptyMsg").innerHTML="POOR";  
+      return false;  
+    }
+if(uemail=="") {  
+    document.getElementById("blaMsg").innerHTML="POOR";  
+    return false;  
+}
+if(passid1=="") {  
+    document.getElementById("blanMsg").innerHTML="POOR";  
+    return false;  
+}
+if(passid2=="" ||(passid2!=passid1)){
+    document.getElementById("blannMsg").innerHTML="POOR or MISMATCH";
+}
+if(age=="") {  
+    document.getElementById("ageMsg").innerHTML="POOR";  
+    return false;  
+}
+if(phnumber=="") {  
+    document.getElementById("phMsg").innerHTML="POOR";  
+    return false;  
+}
+if(uadd=="") {  
+    document.getElementById("addMsg").innerHTML="POOR";  
+    return false;  
+}
+if(ustate=="") {  
+    document.getElementById("stateMsg").innerHTML="POOR";  
+    return false;  
+}
+}
+ </script>
+</head>
+<body>  <center>
+    <table border="0" align="center" bgcolor="pink">
+    <form method="post" action="" id="registrationform" onsubmit ="return formValidation()">
+            <tr>
+                <th colspan="2">
+                    <h1>Registration form</h1>
+                </th>
+            </tr>
+            <tr>
+                <td align="right">
+                   <label for="fname">First Name</label>
+                </td>
+                <td>
+                    <input type="text" id="fname" size="50">
+                    <span id = "blankMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="lname">Last Name</label>
+                </td>
+                <td>
+                    <input type="text" id="lname" size="50">
+                    <span id = "emptyMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="mail">Email</label>
+                </td>
+                <td align="left">
+                    <input type="email" id="mail" size="50">
+                    <span id = "blaMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="pw"></label>Password</label>
+                </td>
+                <td>
+                    <input type="password" id="pw" size="50">
+                    <span id = "blanMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="rpw"></label>Re-Enter password</label>
+                </td>
+                <td>
+                    <input type="password" id="rpw" size="50">
+                    <span id = "blannMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="gender" id="gender">Gender</label>
+                </td>
+                <td><input type="radio" name="gender" value="Male"><span>Male</span><br>
+                    <input type="radio" name="gender" value="Female"><span>Female</span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="age"></label>Age</label>
+                </td>
+                <td>
+                    <input type="number" id="age" size="50">
+                    <span id = "ageMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="phnumber"></label>Phone number</label>
+                </td>
+                <td>
+                    <input type="number" id="phnumber" size="50">
+                    <span id = "phMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="address"></label>Address</label>
+                </td>
+                <td>
+                    <textarea id="address" rows="5" cols="48"></textarea>
+                    <span id = "addMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <label for="state">State</label>
+                </td>
+                <td>
+                    <input type="text" id="state" size="50">
+                    <span id = "stateMsg" style="color:red"> </span>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right"><label for="country">Country:</label>
+                <td><select id="country">
+                <option selected="" value="Default">Choose your country</option>
+                <option value="AF">Australia</option>
+                <option value="AL">Canada</option>
+                <option value="DZ">India</option>
+                <option value="AS">Russia</option>
+                <option value="AD">USA</option>
+                </select></td>
+                </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right"><label for="lang">Languages known</label>
+                <td>
+                <input type="checkbox" name="en" value="en"><span>English</span>
+                <input type="checkbox" name="kan" value="kan"><span>Kannada</span>
+                <input type="checkbox" name="hin" value="hin"><span>Hindi</span>
+                <input type="checkbox" name="tel" value="tel"><span>Telugu</span>
+                </td>
+                </tr>
+                <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td align="right">
+                    <input type="checkbox" name="dec" value="dec"><span>Hereby I declare all the given details are true</span>
+                </td>
+                </tr>
+                <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td></td>
+                <td align="right" colspan="1">
+                    <label for="link">Log in to<a href="#">Ethnus </a>website</label>
+                </td>
+            </tr>
+            <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+            <tr>
+                <td colspan=2 align=center><input type="submit" id="submit" value="REGISTER" >
+                </tr>
+            </form>
+        </table>
+      </center>
+</body>
+</html>
